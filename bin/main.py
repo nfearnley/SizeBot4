@@ -63,13 +63,14 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    try:
     #Easter egg.
-    if "monika" in message.content.lower():
-        if message.author.id != sizebot_id:
-            print(warn("Monika detected."))
-            if random.randrange(10) == 7:
-                print(warn("Monika triggered."))
-                await message.channel.send(monikaline(),delete_after=5)
+        if "monika" in message.content.lower():
+            if message.author.id != sizebot_id:
+                print(warn("Monika detected."))
+                if random.randrange(10) == 7:
+                    print(warn("Monika triggered."))
+                    await message.channel.send(monikaline(),delete_after=5)
 
     #Change user nick if display is Y.
     #TODO: Good luck!

@@ -30,8 +30,8 @@ class DigiException(Exception):
 version = "0.0.1"
 
 #Defaults
-defaultheight =
-defaultweight =
+defaultheight = None #TODO: Set to the new value/unit pairs.
+defaultweight = None #TODO: Set to the new value/unit pairs.
 defaultdensity = Decimal(1.0)
 
 #Constants.
@@ -42,7 +42,7 @@ monikalines = ["What? I don't know anyone named Monika.",
 "I hear Monika was the best character in Doki Doki. I may be a bit biased though 'cause... never mind.",
 "Monika? :sweat_smile: Never heard of her."]
 folder = ".."
-sizebot_id = #TODO: Get SB4's ID.
+sizebot_id = None #TODO: Get SB4's ID.
 digiid = 271803699095928832
 
 #Hex code stuff.
@@ -91,3 +91,11 @@ def round_nearest_half(number):
 #Return a number formated with commas.
 def place_value(number):
     return ("{:,}".format(number))
+
+def check(ctx):
+#Disable commands for users with the SizeBot_Banned role.
+    if not isinstance(ctx.channel, discord.abc.GuildChannel):
+        return False
+
+    role = discord.utils.get(ctx.author.roles, name='SizeBot_Banned')
+    return role is None

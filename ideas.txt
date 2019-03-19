@@ -1,2 +1,4 @@
 * Scientifc notation
 * Allow users to store character pictures
+* Easier, step-by-step register process
+* Oh God please fix the unit handling
