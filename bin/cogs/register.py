@@ -6,6 +6,7 @@ class RegisterCog:
     def __init__(self, bot):
         self.bot = bot
 
+    #TODO: Make this a step-by-step process
     @commands.command()
     async def register(ctx, nick:str, display:str, currentheight:str,
         baseheight:str, baseweight:str, units:str, species:str = None):

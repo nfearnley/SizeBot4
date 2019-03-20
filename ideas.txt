@@ -1,4 +1,5 @@
-* Scientifc notation
+* Scientific notation
 * Allow users to store character pictures
 * Easier, step-by-step register process
 * Oh God please fix the unit handling
+* Store user database in a database and not a fuckton of txt files.
