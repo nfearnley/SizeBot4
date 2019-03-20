@@ -38,8 +38,31 @@ unitmultipliers = {
 }
 
 unitnames = {
-"m" : ["meter", "metre"]
-#...
+"m" : ["meter", "metre"],
+"cm" : ["centimeter", "centimetre"],
+"mm" : ["millimeter", "millimetre"],
+"um" : ["micrometer", "micrometre", "micron"],
+"nm" : ["nanometer", "manometre"],
+"pm" : ["picometer", "picometere"],
+"fm" : ["femtometer", "femotmetre"],
+"am" : ["attometer", "attometre"],
+"zm" : ["zeptometer", "zeptometre"],
+"ym" : ["yoctometer", "yoctometre"],
+"km" : ["kilometer", "kilometre"],
+"Mm" : ["megameter", "megametre"],
+"Gm" : ["gigameter", "gigametre"],
+"Tm" : ["terameter", "terametre"],
+"Pm" : ["petameter", "petametre"],
+"Em" : ["exameter", "exametre"],
+"Zm" : ["zettameter", "zettametre"],
+"Ym" : ["yottameter", "yottametre"],
+"ft" : ["feet", "foot"],
+"in" : ["inches", "inch"],
+"yd" : ["yard"],
+"mi" : ["mile"],
+"ly" : ["lightyear", "light year"],
+"au" : ["astronomical unit", "astronomicalunit"],
+"lp" : ["planck length", "plancklength", "planck"]
 }
 
 #TODO: Code this
