@@ -3,3 +3,22 @@
 * Easier, step-by-step register process
 * Oh God please fix the unit handling
 * Store user database in a database and not a fuckton of txt files.
+* Autostop option for slowchange.
+* Auto-role based on current size option.
+* Manual role change for now-auto-role users.
+* Custom emojis trigger events.
+* Option to allow other s to change your size. (modes: disable, whitelist, all)
+* Height gambling games (Poker? Uno?)
+
+
+stats:                      statsplus:
+height                      ding dong
+weight                      boobles
+foot                        rear end
+thumb
+
+hand
+foot area
+hand area
+fingerprint depth?
+hair diameter
