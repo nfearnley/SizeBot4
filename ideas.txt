@@ -9,6 +9,7 @@
 * Custom emojis trigger events.
 * Option to allow other s to change your size. (modes: disable, whitelist, all)
 * Height gambling games (Poker? Uno?)
+* Add children's sizes to shoe size calc if value is negative (+12)
 
 
 stats:                      statsplus:
