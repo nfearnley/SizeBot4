@@ -1,15 +1,15 @@
 * Scientific notation.
 * Allow users to store character pictures.
 * Easier, step-by-step register process.
-* Oh God please fix the unit handling.
+* Oh God please fix the unit handling. [working on it]
 * Store user database in a database and not a fuckton of txt files.
 * Autostop option for slowchange.
+* Auto-role for SizeBot Users.
 * Auto-role based on current size option.
 * Manual role change for now-auto-role users.
 * Custom emojis trigger events.
 * Option to allow other s to change your size. (modes: disable, whitelist, all)
 * Height gambling games (Poker? Uno?)
-* Add children's sizes to shoe size calc if value is negative (+12)
 * Allow you to compare another user other than yourself with compareraw.
 
 
