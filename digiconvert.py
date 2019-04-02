@@ -65,6 +65,28 @@ unitnames = {
 "lp" : ["planck length", "plancklength", "planck"]
 }
 
+def toShoeSize(inchamount):
+	child = False
+	inches = Decimal(inchamount)
+	shoesize = 3 * inches
+	shoesize = shoesize - 22
+	if shoesize < 1:
+		child = True
+		shoesize += 12 + Decimal(1/3)
+	shoesize = place_value(round_nearest_half(shoesize))
+	if child == True: shoesize = "Children's " + shoesize
+	return shoesize
+
+def fromShoeSize(size):
+	child = False
+	if "c" in size.toLower(): child = True
+	size = getnum(size)
+	inches = Decimal(size) + 22
+	if child == True: inches = Decimal(size) + 22 - 12 - (1/3)
+	inches = inches / Decimal(3)
+	out = inches * inch
+	return out
+
 #TODO: Code this
 #Return a float.
 def convertunit(amount, from, to):
@@ -73,5 +95,5 @@ def convertunit(amount, from, to):
 #TODO: Code this
 #eg: convertname("meter") > returns "m"
 # Auto detect 's' at the end of a unit.
-def convertname(amount, from, to):
+def convertname(fullname):
     pass

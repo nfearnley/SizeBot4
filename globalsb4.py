@@ -42,6 +42,7 @@ monikalines = ["What? I don't know anyone named Monika.",
 "I hear Monika was the best character in Doki Doki. I may be a bit biased though 'cause... never mind.",
 "Monika? :sweat_smile: Never heard of her."]
 folder = ".."
+reol = 106871675617820672
 sizebot_id = None #TODO: Get SB4's ID.
 digiid = 271803699095928832
 
