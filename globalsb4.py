@@ -83,6 +83,7 @@ def getlet(string):
 #Remove trailing zeros.
 #TODO
 def removetrailing0s():
+    #(\d*\.[123456789]*)0*
     pass
 
 #Return a number rounded to the nearest .5.
