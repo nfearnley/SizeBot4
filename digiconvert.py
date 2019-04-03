@@ -34,14 +34,41 @@ unitmultipliers = {
 "mi" : 1609.34,
 "ly" : 9460730472580800,
 "au" : 149597870700,
-"lp" : 0.00000000000000000000000000000000001616229
+"lp" : 0.00000000000000000000000000000000001616229,
+
+#Small SI weights.
+"g" : 0.001,
+"mg" : 0.000001,
+"ug" : 0.000000001,
+"ng" : 0.000000000001,
+"pg" : 0.000000000000001,
+"fg" : 0.000000000000000001,
+"ag" : 0.000000000000000000001,
+"zg" : 0.000000000000000000000001,
+"yg" : 0.000000000000000000000000001,
+#Big SI weights.
+"kg" : 1,
+"t" : 1000,
+"kt" : 1000000,
+"Mt" : 1000000000,
+"Gt" : 1000000000000,
+"Tt" : 1000000000000000,
+"Pt" : 1000000000000000000,
+"Et" : 1000000000000000000000,
+"Zt" : 1000000000000000000000000,
+"Yt" : 1000000000000000000000000000,
+#US weights.
+"rice" : 0.000029,
+"oz" : 0.02835,
+"lb" : 0.4636,
+"tn" : 907.185
 }
 
 unitnames = {
 "m" : ["meter", "metre"],
 "cm" : ["centimeter", "centimetre"],
 "mm" : ["millimeter", "millimetre"],
-"um" : ["micrometer", "micrometre", "micron"],
+"um" : ["micrometer", "micrometre", "micron", "μm"],
 "nm" : ["nanometer", "manometre"],
 "pm" : ["picometer", "picometere"],
 "fm" : ["femtometer", "femotmetre"],
@@ -62,7 +89,30 @@ unitnames = {
 "mi" : ["mile"],
 "ly" : ["lightyear", "light year"],
 "au" : ["astronomical unit", "astronomicalunit"],
-"lp" : ["planck length", "plancklength", "planck"]
+"lp" : ["planck length", "plancklength", "planck"],
+"g" : ["gram"],
+"mg" : ["milligram"],
+"ug" : ["microgram", "μg"],
+"ng" : ["nanogram"],
+"pg" : ["picogram"],
+"fg" : ["femtogram"],
+"ag" : ["attogram"],
+"zg" : ["zeptogram"],
+"yg" : ["yoctogram"],
+"kg" : ["kilogram"],
+"t" : ["ton", "metric ton"],
+"kt" : ["kiloton", "metric kiloton"],
+"Mt" : ["megaton", "metric megaton"],
+"Gt" : ["gigaton", "metric gigaton"],
+"Tt" : ["teraton", "metric teraton"],
+"Pt" : ["petaton", "metric petaton"],
+"Et" : ["exaton", "metric exaton"],
+"Zt" : ["zettaton", "metric zettaton"],
+"Yt" : ["yottaton", "metric yottaton"],
+"rice" ["rice", "grain of rice", "grain"],
+"oz" : ["ounce"],
+"lb" : ["pound"],
+"tn" : ["ton", "short ton", "US ton"]
 }
 
 def toShoeSize(inchamount):
