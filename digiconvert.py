@@ -218,10 +218,9 @@ def fromShoeSize(size):
 	out = inches * inch
 	return out
 
-#TODO: Code this
 #eg: convertname("meter") > returns "m"
-# Auto detect 's' at the end of a unit.
-# Remove spaces and lower() before check against the unitnames.
+# Auto test without 's' at the end of a unit.
+# Removes spaces and lower() before check against the unitnames.
 def convertname(fullname):
 	fullname = fullname.lower()
 	fullname = fullname.replace(" ", "")
