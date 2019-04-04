@@ -35,6 +35,11 @@ unitmultipliers = {
 "ly" : 9460730472580800,
 "au" : 149597870700,
 "ℓₚ" : 0.00000000000000000000000000000000001616229,
+#Astronomical object lengths.
+"🌎" : 12742020,
+"☀️" : 1391000000,
+"🌌" : 946073047258080000000,
+"uni" : 8.80000000000000000000000000
 
 #Small SI weights.
 "g" : 0.001,
@@ -122,6 +127,11 @@ unitnames = {
 "ly" : ["lightyear"],
 "au" : ["astronomicalunit"],
 "ℓₚ" : ["plancklength", "planck", "pl", "lp"],
+#Astronomical objects lengths.
+"🌎" : ["earth"],
+"☀️" : ["sun"],
+"🌌" : ["galaxy", "galaxies", "milkyway"],
+"uni" : ["universe", "observableuniverse", "ouni"],
 #Small SI weights.
 "g" : ["gram"],
 "mg" : ["milligram"],
@@ -201,13 +211,13 @@ def fromShoeSize(size):
 	return out
 
 #TODO: Code this
-#Return a float.
-def convertunit(amount, from, to):
+#eg: convertname("meter") > returns "m"
+# Auto detect 's' at the end of a unit.
+# Remove spaces and toLower() before check against the unitnames.
+def convertname(fullname):
     pass
 
 #TODO: Code this
-#eg: convertname("meter") > returns "m"
-# Auto detect 's' at the end of a unit.
-# Remove spaces before check against the unitnames.
-def convertname(fullname):
+#Return a float.
+def convertunit(amount, from, to):
     pass
