@@ -7,18 +7,19 @@
 #So, meters, kilograms, square meters.
 #Each key is it's abbreviation.
 unitmultipliers = {
+"SIlengths" : {
 #Small SI lengths
-"m" : 1,
-"cm" : 0.01,
-"mm" : 0.001,
-"um" : 0.000001,
-"nm" : 0.000000001,
-"pm" : 0.000000000001,
-"fm" : 0.000000000000001,
-"am" : 0.000000000000000001,
-"zm" : 0.000000000000000000001,
 "ym" : 0.000000000000000000000001,
+"zm" : 0.000000000000000000001,
+"am" : 0.000000000000000001,
+"fm" : 0.000000000000001,
+"pm" : 0.000000000001,
+"nm" : 0.000000001,
+"μm" : 0.000001,
+"mm" : 0.001,
+"cm" : 0.01,
 #Big SI lengths.
+"m" : 1,
 "km" : 1000,
 "Mm" : 1000000,
 "Gm" : 1000000000,
@@ -27,30 +28,33 @@ unitmultipliers = {
 "Em" : 1000000000000000000,
 "Zm" : 1000000000000000000000,
 "Ym" : 1000000000000000000000000,
+"uni" : 880000000000000000000000000},
+"USlengths" : {
 #US lengths.
-"ft" : 0.3048,
 "in" : 0.0254,
+"ft" : 0.3048,
 "yd" : 0.9144,
 "mi" : 1609.34,
-"ly" : 9460730472580800,
 "au" : 149597870700,
+"ly" : 9460730472580800,
 "ℓₚ" : 0.00000000000000000000000000000000001616229,
 #Astronomical object lengths.
 "🌎" : 12742020,
 "☀️" : 1391000000,
 "🌌" : 946073047258080000000,
-"uni" : 8.80000000000000000000000000
+"uni" : 880000000000000000000000000},
 
+"SIweights" : {
 #Small SI weights.
-"g" : 0.001,
-"mg" : 0.000001,
-"ug" : 0.000000001,
-"ng" : 0.000000000001,
-"pg" : 0.000000000000001,
-"fg" : 0.000000000000000001,
-"ag" : 0.000000000000000000001,
-"zg" : 0.000000000000000000000001,
 "yg" : 0.000000000000000000000000001,
+"zg" : 0.000000000000000000000001,
+"ag" : 0.000000000000000000001,
+"fg" : 0.000000000000000001,
+"pg" : 0.000000000000001,
+"ng" : 0.000000000001,
+"μg" : 0.000000001,
+"mg" : 0.000001,
+"g" : 0.001,
 #Big SI weights.
 "kg" : 1,
 "t" : 1000,
@@ -61,25 +65,27 @@ unitmultipliers = {
 "Pt" : 1000000000000000000,
 "Et" : 1000000000000000000000,
 "Zt" : 1000000000000000000000000,
-"Yt" : 1000000000000000000000000000,
+"Yt" : 1000000000000000000000000000},
+"USweights" : {
 #US weights.
 "rice" : 0.000029,
 "oz" : 0.02835,
 "lb" : 0.4636,
-"tn" : 907.185,
+"tn" : 907.185},
 
+"SIareas" : {
 #Small SI areas
-"m²" : 1,
-"cm²" : 0.0001,
-"mm²" : 0.000001,
-"um²" : 0.000000000001,
-"nm²" : 0.000000000000000001,
-"pm²" : 0.000000000000000000000001,
-"fm²" : 0.000000000000000000000000000001,
-"am²" : 0.000000000000000000000000000000000001,
-"zm²" : 0.000000000000000000000000000000000000000001,
 "ym²" : 0.000000000000000000000000000000000000000000000001,
+"zm²" : 0.000000000000000000000000000000000000000001,
+"am²" : 0.000000000000000000000000000000000001,
+"fm²" : 0.000000000000000000000000000001,
+"pm²" : 0.000000000000000000000001,
+"nm²" : 0.000000000000000001,
+"μm²" : 0.000000000001,
+"mm²" : 0.000001,
+"cm²" : 0.0001,
 #Big SI areas.
+"m²" : 1,
 "km²" : 1000000,
 "Mm²" : 1000000000000,
 "Gm²" : 1000000000000000000,
@@ -87,15 +93,16 @@ unitmultipliers = {
 "Pm²" : 1000000000000000000000000000000,
 "Em²" : 1000000000000000000000000000000000000,
 "Zm²" : 1000000000000000000000000000000000000000000,
-"Ym²" : 1000000000000000000000000000000000000000000000000,
+"Ym²" : 1000000000000000000000000000000000000000000000000},
+"USareas" : {
 #US areas.
-"ft²" : 0.0929,
+"ℓₚ²" : 0.0000000000000000000000000000000000000000000000000000000000000000000002612,
 "in²" : 0.00064516,
+"ft²" : 0.0929,
 "yd²" : 0.8361,
 "mi²" : 2590000,
-"ly²" : 89510000000000000000000000000000,
 "au²" : 22380000000000000000000,
-"ℓₚ²" : 0.0000000000000000000000000000000000000000000000000000000000000000000002612
+"ly²" : 89510000000000000000000000000000}
 }
 
 unitnames = {
@@ -103,7 +110,7 @@ unitnames = {
 "m" : ["meter", "metre"],
 "cm" : ["centimeter", "centimetre"],
 "mm" : ["millimeter", "millimetre"],
-"um" : ["micrometer", "micrometre", "micron", "μm"],
+"μm" : ["micrometer", "micrometre", "micron", "um"],
 "nm" : ["nanometer", "manometre"],
 "pm" : ["picometer", "picometere"],
 "fm" : ["femtometer", "femotmetre"],
@@ -135,7 +142,7 @@ unitnames = {
 #Small SI weights.
 "g" : ["gram"],
 "mg" : ["milligram"],
-"ug" : ["microgram", "μg"],
+"μg" : ["microgram", "ug"],
 "ng" : ["nanogram"],
 "pg" : ["picogram"],
 "fg" : ["femtogram"],
@@ -162,7 +169,7 @@ unitnames = {
 "m²" : ["meter²", "metre²", "meter2", "metre2", "squaremeter", "squaremetre"],
 "cm²" : ["centimeter²", "centimetre²", "centimeter2", "centimetre2", "squarecentimeter", "squarecentimetre"],
 "mm²" : ["millimeter²", "millimetre²", "millimeter2", "millimetre2", "squaremillimeter", "squaremillimetre"],
-"um²" : ["micrometer²", "micrometre²", "micron²", "μm²", "micrometer2", "micrometre2", "micron2", "μm2", "squaremicrometer", "squaremicrometre", " squaremicron", "squareμm"],
+"μm²" : ["micrometer²", "micrometre²", "micron²", "um²", "micrometer2", "micrometre2", "micron2", "um2", "squaremicrometer", "squaremicrometre", " squaremicron", "squareum"],
 "nm²" : ["nanometer²", "nanometre²", "nanometer2", "nanometre2", "squarenanometer", "squarenanometre"],
 "pm²" : ["picometer²", "picometere²", "picometer2", "picometere2", "squarepicometer", "squarepicometere"],
 "fm²" : ["femtometer²", "femotmetre²", "femtometer2", "femotmetre2", "squarefemtometer", "squarefemotmetre"],
