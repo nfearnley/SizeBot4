@@ -162,7 +162,7 @@ unitnames = {
 "Zt" : ["zettaton", "metriczettaton", "zettatonne", "metriczettatonne"],
 "Yt" : ["yottaton", "metricyottaton", "yottatonne", "metricyottatonne"],
 #US weights.
-"rice" ["rice", "grainofrice", "grain", "ricegrain"],
+"rice" : ["rice", "grainofrice", "grain", "ricegrain"],
 "oz" : ["ounce"],
 "lb" : ["pound"],
 "tn" : ["ton", "shortton", "USton"],
@@ -221,11 +221,17 @@ def fromShoeSize(size):
 #TODO: Code this
 #eg: convertname("meter") > returns "m"
 # Auto detect 's' at the end of a unit.
-# Remove spaces and toLower() before check against the unitnames.
+# Remove spaces and lower() before check against the unitnames.
 def convertname(fullname):
-    pass
+	fullname = fullname.lower()
+	fullname = fullname.replace(" ", "")
+	fullnameplural = fullname[:-1]
+	for unit, names in unitnames.items():
+		if fullname in names or fullnameplural in names:
+			return fullname + " or " + fullnameplural + " equals " + unit
+	return fullname + " or " + fullnameplural + " equals " + "unknown unit"
 
 #TODO: Code this
 #Return a float.
-def convertunit(amount, from, to):
-    pass
+def convertunit(amount, unitfrom, unitto):
+	pass
