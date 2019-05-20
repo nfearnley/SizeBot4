@@ -133,8 +133,8 @@ unitnames = {
 "Zm" : ["zettameter", "zettametre"],
 "Ym" : ["yottameter", "yottametre"],
 #US lengths.
-"ft" : ["feet", "foot"],
-"in" : ["inches", "inch"],
+"ft" : ["feet", "foot", "\'"],
+"in" : ["inches", "inch", "\""],
 "yd" : ["yard"],
 "mi" : ["mile"],
 "ly" : ["lightyear"],
@@ -233,12 +233,26 @@ def convertname(fullname):
 	for unit, names in unitnames.items():
 		if fullname in names or fullnameplural in names:
 			return unit
-	return "unknown unit"
+	return fullname
 
 #eg: findreasonableunit(1000, "length", "metric") > "km"
 def findreasonableunit(SV, unittype, system):
+	pass
 
 #TODO: Code this
 #Return a float.
-def convertunit(amount, unitfrom, unitto):
-	pass
+def convert(amount, unitfrom, unitto):
+	unitfromKey = convertname(unitfrom)
+	unittoKey = convertname(unitto)
+	frommult = 0
+	tomult = 0
+	for nestedname, nesteddict in unitmultipliers.items():
+		if unitfromKey in nesteddict.keys():
+			frommult = nesteddict[unitfromKey]
+	for nestedname, nesteddict in unitmultipliers.items():
+		if unittoKey in nesteddict.keys():
+			tomult = nesteddict[unittoKey]
+	newamount = amount * frommult / tomult
+	print(f"convert(amount: {amount}, unitfrom: {unitfrom}, unitto: {unitto})")
+	print(f"{amount}{unitfromKey} | {newamount}{unittoKey}")
+	print()
