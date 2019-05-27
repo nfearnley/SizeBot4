@@ -8,9 +8,9 @@ from globalsb4 import *
 from DPNVT import *
 from DPNGourmet import *
 
-#All multipliers are based on the SI unit for that unti type.
+#All multipliers are based on the SI unit for that unit type.
 #So, meters, kilograms, square meters.
-#Each key is it's abbreviation.
+#Each key is its abbreviation.
 unitmultipliers = {
 "SIlengths" : {
 #Small SI lengths
@@ -63,6 +63,7 @@ unitmultipliers = {
 "g" : 0.001,
 #Big SI weights.
 "kg" : 1,
+"st" : 6.35029,
 "t" : 1000,
 "kt" : 1000000,
 "Mt" : 1000000000,
@@ -157,6 +158,7 @@ unitnames = {
 "yg" : ["yoctogram"],
 #Big SI weights.
 "kg" : ["kilogram"],
+"st" : ["stone"],
 "t" : ["tonne", "metricton", "metrictonne"],
 "kt" : ["kiloton", "metrickiloton", "kilotonne", "metrickilotonen"],
 "Mt" : ["megaton", "metricmegaton", "megatonne", "metricmegatonne"],
@@ -223,10 +225,10 @@ def fromShoeSize(size):
 	out = inches * inch
 	return out
 
-#eg: convertname("meter") > returns "m"
+#eg: convertName("meter") > returns "m"
 # Auto test without 's' at the end of a unit.
 # Removes spaces and lower() before check against the unitnames.
-def convertname(fullname):
+def convertName(fullname):
 	fullname = fullname.lower()
 	fullname = fullname.replace(" ", "")
 	fullnameplural = fullname[:-1]
@@ -236,14 +238,16 @@ def convertname(fullname):
 	return fullname
 
 #eg: findreasonableunit(1000, "length", "metric") > "km"
-def findreasonableunit(SV, unittype, system):
+def findReasonableUnit(SV, unittype, system):
 	pass
 
-#TODO: Code this
+def isFeetAndInchesAndIfSoFixIt(input):
+	pass
+
 #Return a float.
 def convert(amount, unitfrom, unitto):
-	unitfromKey = convertname(unitfrom)
-	unittoKey = convertname(unitto)
+	unitfromKey = convertName(unitfrom)
+	unittoKey = convertName(unitto)
 	frommult = 0
 	tomult = 0
 	for nestedname, nesteddict in unitmultipliers.items():
@@ -252,7 +256,8 @@ def convert(amount, unitfrom, unitto):
 	for nestedname, nesteddict in unitmultipliers.items():
 		if unittoKey in nesteddict.keys():
 			tomult = nesteddict[unittoKey]
-	newamount = amount * frommult / tomult
+	newamount = Decimal(amount) * Decimal(frommult) / Decimal(tomult)
+	newamount = round(newamount, 3)
 	print(f"convert(amount: {amount}, unitfrom: {unitfrom}, unitto: {unitto})")
 	print(f"{amount}{unitfromKey} | {newamount}{unittoKey}")
 	print()
