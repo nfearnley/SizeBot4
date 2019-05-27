@@ -1,27 +1,5 @@
-import discord
-from discord.ext import commands
-import re
-import datetime
-import sys
-import os
-import time
-from datetime import date
-from datetime import *
-import math
-import random
-from decimal import *
-from colored import fore, back, style, fg, bg, attr
-from pathlib import Path
-import string
-import traceback
-from discord.ext import commands
-from math import *
-import asyncio
-import codecs
-
 from globalsb4 import *
-from DPNVT import *
-from DPNGourmet import *
+
 
 #Required dor colored to work on Windows.
 os.system("")

@@ -4,6 +4,7 @@
 * Oh God please fix the unit handling. [working on it]
 * Store user database in a database and not a fuckton of txt files.
 * Autostop option for slowchange.
+* Stop using async tasks for slowchange. (Store in a database and read from periodically?)
 * Auto-role for SizeBot Users.
 * Auto-role based on current size option.
 * Manual role change for now-auto-role users.
