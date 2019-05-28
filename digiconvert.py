@@ -3,10 +3,7 @@
 #Mainly because I don't like any other unit conversion packages.
 #For now it's just going to be units the SizeBot uses but maybe I'll add more and make this public later.
 
-from decimal import *
 from globalsb4 import *
-from DPNVT import *
-from DPNGourmet import *
 
 #All multipliers are based on the SI unit for that unit type.
 #So, meters, kilograms, square meters.

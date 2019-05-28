@@ -18,9 +18,11 @@ from discord.ext import commands
 from math import *
 import asyncio
 import codecs
+from time import strftime, localtime
 
 from DPNVT import *
 from DPNGourmet import *
+from digiconvert import *
 
 #TODO: Make this do something useful.
 class DigiException(Exception):

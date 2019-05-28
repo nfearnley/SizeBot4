@@ -1,6 +1,5 @@
 from globalsb4 import *
 
-
 #Required dor colored to work on Windows.
 os.system("")
 

@@ -1,5 +1,3 @@
-import discord
-from discord.ext import commands
 from globalsb4 import *
 
 #Commands for non-size stuff.

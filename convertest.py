@@ -1,4 +1,3 @@
-from digiconvert import *
 from globalsb4 import *
 
 print()
