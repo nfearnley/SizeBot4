@@ -234,8 +234,8 @@ def convertName(fullname):
 			return unit
 	return fullname
 
-#eg: findreasonableunit(1000, "length", "metric") > "km"
-def findReasonableUnit(SV, unittype, system):
+#eg: findreasonableunit([5000, "meter"], "length", "metric") > "km"
+def findReasonableUnit(VUpair, unittype, system):
 	pass
 
 def isFeetAndInchesAndIfSoFixIt(input):
@@ -266,3 +266,4 @@ def convert(amount, unitfrom, unitto):
 	print(f"convert(amount: {amount}, unitfrom: {unitfrom}, unitto: {unitto})")
 	print(f"{amount}{unitfromKey} | {newamount}{unittoKey}")
 	print()
+	return [newamount, unittoKey]
