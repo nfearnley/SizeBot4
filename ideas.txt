@@ -9,13 +9,14 @@
 * Auto-role based on current size option.
 * Manual role change for now-auto-role users.
 * Custom emojis trigger events.
-* Option to allow other s to change your size. (modes: disable, whitelist, all)
+* Option to allow others to change your size. (modes: disable, whitelist, all)
 * Height gambling games (Poker? Uno? Deal or No Deal?)
 * Allow you to compare another user other than yourself with compareraw.
 * Allow expansions for various body parts (weight, foot, NSFW)
 * Fix Unicode handling for nicknames.
-* Store OC pictures
-* Generate user "cards"
+* Generate user "cards".
+* Switchable user profiles.
+* Visual height comparisons.
 
 
 stats:                      statsplus:
