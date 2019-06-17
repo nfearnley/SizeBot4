@@ -239,11 +239,11 @@ def findReasonableUnit(VUpair, unittype, system):
 	pass
 
 def isFeetAndInchesAndIfSoFixIt(input):
-	if re.search(r"([0-9.]+)\'([0-9.]+)\"", input):
+	if re.search(r"([0-9.]+)(\'|ft)([0-9.]+)(\"|in)", input):
 		print("Feet and inches...")
-		m = re.match(r"([0-9.]+)\'([0-9.]+)\"", input)
+		m = re.match(r"([0-9.]+)(\'|ft)([0-9.]+)(\"|in)", input)
 		feet = Decimal(m.group(1))
-		inch = Decimal(m.group(2))
+		inch = Decimal(m.group(3))
 		totalinches = (feet * 12) + inch
 		return f"{totalinches}in"
 	else:
