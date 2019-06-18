@@ -5,11 +5,21 @@
 
 from globalsb4 import *
 
+#NOTE: A VUpair is a [Decimal/float, string] pair, where the first variable is the
+#value, and the second variable is the unit. SizeBot will be taking in and
+#outputting these where possible, for consistency.
+
+#Custom exceptions.
+class UnitTypeMismatchError(Exception):
+	pass
+class UnitNotFoundError(Exception):
+	pass
+
 #All multipliers are based on the SI unit for that unit type.
 #So, meters, kilograms, square meters.
 #Each key is its abbreviation.
 unitmultipliers = {
-"SIlengths" : {
+"length" : {
 #Small SI lengths
 "ℓₚ" : 0.00000000000000000000000000000000001616229,
 "ym" : 0.000000000000000000000001,
@@ -31,8 +41,7 @@ unitmultipliers = {
 "Em" : 1000000000000000000,
 "Zm" : 1000000000000000000000,
 "Ym" : 1000000000000000000000000,
-"uni" : 880000000000000000000000000},
-"USlengths" : {
+"uni" : 880000000000000000000000000,
 #US lengths.
 "in" : 0.0254,
 "ft" : 0.3048,
@@ -45,9 +54,9 @@ unitmultipliers = {
 "🌎" : 12742020,
 "☀️" : 1391000000,
 "🌌" : 946073047258080000000,
-"uni" : 880000000000000000000000000},
-
-"SIweights" : {
+"uni" : 880000000000000000000000000
+},
+"weight" : {
 #Small SI weights.
 "yg" : 0.000000000000000000000000001,
 "zg" : 0.000000000000000000000001,
@@ -69,15 +78,14 @@ unitmultipliers = {
 "Pt" : 1000000000000000000,
 "Et" : 1000000000000000000000,
 "Zt" : 1000000000000000000000000,
-"Yt" : 1000000000000000000000000000},
-"USweights" : {
+"Yt" : 1000000000000000000000000000,
 #US weights.
 "rice" : 0.000029,
 "oz" : 0.02835,
 "lb" : 0.4636,
-"tn" : 907.185},
-
-"SIareas" : {
+"tn" : 907.185
+},
+"area" : {
 #Small SI areas
 "ym²" : 0.000000000000000000000000000000000000000000000001,
 "zm²" : 0.000000000000000000000000000000000000000001,
@@ -97,8 +105,7 @@ unitmultipliers = {
 "Pm²" : 1000000000000000000000000000000,
 "Em²" : 1000000000000000000000000000000000000,
 "Zm²" : 1000000000000000000000000000000000000000000,
-"Ym²" : 1000000000000000000000000000000000000000000000000},
-"USareas" : {
+"Ym²" : 1000000000000000000000000000000000000000000000000,
 #US areas.
 "ℓₚ²" : 0.0000000000000000000000000000000000000000000000000000000000000000000002612,
 "in²" : 0.00064516,
@@ -106,7 +113,8 @@ unitmultipliers = {
 "yd²" : 0.8361,
 "mi²" : 2590000,
 "au²" : 22380000000000000000000,
-"ly²" : 89510000000000000000000000000000}
+"ly²" : 89510000000000000000000000000000
+}
 }
 
 unitnames = {
@@ -200,6 +208,22 @@ unitnames = {
 "ℓₚ²" : ["plancklength²", "planck²", "pl²", "lp²", "plancklength2", "planck2", "pl2", "lp2", "squareplancklength", "squareplanck", "squarepl", "squarelp", "sqℓₚ", "sqlp", "sqpl"],
 }
 
+#Different scales and their cutoffs )for display only.)
+#If the size given is above the key, it will use the value of that pair as it's convert-to unit.
+#TODO: Not done.
+orders = {
+metriclength : {
+0: "ℓₚ",
+0.000000000000000000000001: "ym",
+0.000000000000000000001: "zm"
+},
+uslength : {
+0.0254 : "in",
+0.3048 : "ft",
+1609.34 : "mi" #Yard intentionally skipped.
+}
+}
+
 def toShoeSize(inchamount):
 	child = False
 	inches = Decimal(inchamount)
@@ -235,6 +259,8 @@ def convertName(fullname):
 	return fullname
 
 #eg: findreasonableunit([5000, "meter"], "length", "metric") > "km"
+#For user-end display. (Size tags, stats...)
+#Uses orders{}.
 def findReasonableUnit(VUpair, unittype, system):
 	pass
 
@@ -250,19 +276,40 @@ def isFeetAndInchesAndIfSoFixIt(input):
 		return input
 
 #Return a float.
-def convert(amount, unitfrom, unitto):
+def convert(VUpair, unitto):
+	#Set up our variables.
+	VUpair[0] = amount
+	VUpair[1] = unitfrom
 	unitfromKey = convertName(unitfrom)
 	unittoKey = convertName(unitto)
 	frommult = 0
 	tomult = 0
+	unittype = None
+
+	#Test to see the unit type.
+	if unitfromKey in unitmultipliers["length"]: unittype = "length"
+	if unitfromKey in unitmultipliers["weight"]: unittype = "weight"
+	if unitfromKey in unitmultipliers["area"]: unittype = "area"
+
+	#If the unit's not there, we throw an error.
+	if unittype = None: raise UnitNotFoundError
+
+	#Test if the to unit exists and matches type.
+	if unittoKey not in unitmultipliers[unittype]: raise UnitTypeMismatchError
+
+	#Get the multipliers based on their key.
 	for nestedname, nesteddict in unitmultipliers.items():
 		if unitfromKey in nesteddict.keys():
 			frommult = nesteddict[unitfromKey]
 	for nestedname, nesteddict in unitmultipliers.items():
 		if unittoKey in nesteddict.keys():
 			tomult = nesteddict[unittoKey]
+
+	#Do the math.
 	newamount = Decimal(amount) * Decimal(frommult) / Decimal(tomult)
 	newamount = round(newamount, 3)
+
+	#Return a VUpair.
 	print(f"convert(amount: {amount}, unitfrom: {unitfrom}, unitto: {unitto})")
 	print(f"{amount}{unitfromKey} | {newamount}{unittoKey}")
 	print()
