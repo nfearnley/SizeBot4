@@ -49,12 +49,10 @@ unitmultipliers = {
 "mi" : 1609.34,
 "au" : 149597870700,
 "ly" : 9460730472580800,
-"ℓₚ" : 0.00000000000000000000000000000000001616229,
 #Astronomical object lengths.
 "🌎" : 12742020,
 "☀️" : 1391000000,
 "🌌" : 946073047258080000000,
-"uni" : 880000000000000000000000000
 },
 "weight" : {
 #Small SI weights.
@@ -83,7 +81,12 @@ unitmultipliers = {
 "rice" : 0.000029,
 "oz" : 0.02835,
 "lb" : 0.4636,
-"tn" : 907.185
+"tn" : 907.185,
+#TODO: Add astronomical weights.
+"🌎w" : None,
+"☀️w" : None,
+"🌌w" : None,
+"uniw": None
 },
 "area" : {
 #Small SI areas
@@ -178,6 +181,11 @@ unitnames = {
 "oz" : ["ounce"],
 "lb" : ["pound"],
 "tn" : ["ton", "shortton", "USton"],
+#Astronomical objects weights.
+"🌎w" : ["earthw", "earthweight"],
+"☀️w" : ["sunw, sunweight"],
+"🌌w" : ["galaxyw", "galaxiesw", "milkywayw", "galaxyweight", "galaxiesweight", "milkywayweight", "milkywight"],
+"uniw" : ["universew", "observableuniversew", "ouniw", "universeweight", "observableuniverseweight", "ouniweight"],
 #Small SI areas.
 "m²" : ["meter²", "metre²", "meter2", "metre2", "squaremeter", "squaremetre", "sqm"],
 "cm²" : ["centimeter²", "centimetre²", "centimeter2", "centimetre2", "squarecentimeter", "squarecentimetre", "sqcm"],
@@ -215,16 +223,46 @@ orders = {
 metriclength : {
 0: "ℓₚ",
 0.000000000000000000000001: "ym",
-0.000000000000000000001: "zm"
+0.000000000000000000001: "zm",
+0.000000000000000001 : "am",
+0.000000000000001 : "fm",
+0.000000000001: "pm",
+0.000000001: "nm",
+0.000001: "μm",
+0.0001: "mm", #Intentionally incorrect value, shows mm starting at 0.1mm.
+0.01: "cm",
+1: "m",
+1000: "km",
+1000000: "Mm",
+1000000000: "Gm",
+1000000000000: "Tm",
+1000000000000000: "Pm",
+1000000000000000000: "Em",
+1000000000000000000000: "Zm",
+1000000000000000000000000: "Ym",
+880000000000000000000000000: "uni"
 },
 uslength : {
+0: "ℓₚ",
+0.000000000000000000000001: "ym",
+0.000000000000000000001: "zm",
+0.000000000000000001 : "am",
+0.000000000000001 : "fm",
+0.000000000001: "pm",
+0.000000001: "nm",
+0.000001: "μm",
 0.0254 : "in",
 0.3048 : "ft",
-1609.34 : "mi" #Yard intentionally skipped.
+1609.34 : "mi", #Yard intentionally skipped.
+12742020: "🌎",
+1391000000: "☀️",
+946073047258080000000: "🌌",
+880000000000000000000000000: "uni"
 }
 }
 
-def toShoeSize(inchamount):
+def toShoeSize(VUpair):
+	inchamount = convert(VUpair, "in")[0]
 	child = False
 	inches = Decimal(inchamount)
 	shoesize = 3 * inches
@@ -275,7 +313,7 @@ def isFeetAndInchesAndIfSoFixIt(input):
 	else:
 		return input
 
-#Return a float.
+#Return a VUpair.
 def convert(VUpair, unitto):
 	#Set up our variables.
 	VUpair[0] = amount
