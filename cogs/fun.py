@@ -1,7 +1,9 @@
-from globalsb4 import *
+from discord.ext import commands
+
+from globalsb4 import digiid
 
 #Commands for non-size stuff.
-class FunCog:
+class FunCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 

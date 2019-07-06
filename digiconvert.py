@@ -3,7 +3,7 @@
 #Mainly because I don't like any other unit conversion packages.
 #For now it's just going to be units the SizeBot uses but maybe I'll add more and make this public later.
 
-from globalsb4 import *
+from globalsb4 import getnum, round_nearest_half, place_value
 
 #NOTE: A VUpair is a [Decimal/float, string] pair, where the first variable is the
 #value, and the second variable is the unit. SizeBot will be taking in and

@@ -1,4 +1,6 @@
-from globalsb4 import *
+from time import strftime, localtime
+
+from colored import fg, back, fore, style
 
 def load(message):
 	return (fg(238) + message + style.RESET)

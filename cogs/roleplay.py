@@ -1,7 +1,7 @@
-from globalsb4 import *
+from discord.ext import commands
 
 #Commands for roleplaying.
-class RPCog:
+class RPCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 

@@ -1,12 +1,24 @@
-from globalsb4 import *
+import os
+from decimal import Decimal
 
-class RegisterCog:
+from discord.ext import commands
+
+from DPNGourmet import warn
+from globalsb4 import regenhexcode, readhexcode, getnum, getlet, newline, folder
+
+def toSV(*args):
+    return "REPLACE THIS"
+
+def toWV(*args):
+    return "REPLACE THIS"
+
+class RegisterCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     #TODO: Make this a step-by-step process
     @commands.command()
-    async def register(ctx, nick:str, display:str, currentheight:str,
+    async def register(self, ctx, nick:str, display:str, currentheight:str,
         baseheight:str, baseweight:str, units:str, species:str = None):
         #Registers a user for SizeBot.
 
@@ -32,7 +44,7 @@ class RegisterCog:
         if os.path.exists(folder + '/users/' + str(ctx.message.author.id) + '.txt'):
             await ctx.send("""Sorry! You already registered with SizeBot.
     To unregister, use the `&unregister` command.""", delete_after=5)
-            print(warn("Error UAE1 on user registration: {1}.".format(ctx.message.author)))
+            print(warn("Error UAE1 on user registration: {0}.".format(ctx.message.author)))
             return
         #Invalid size value.
         elif (currentheight <= 0 or
@@ -65,14 +77,14 @@ class RegisterCog:
             await ctx.send("Registered <@{0}>. {1}.".format(ctx.message.author.id, readable), delete_after=3)
 
     @register.error
-    async def register_handler(ctx, error):
+    async def register_handler(self, ctx, error):
         # Check if required argument is missing.
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("""Not enough variables for `register`.
     Use `&register [nick] [display (Y/N)] [currentheight] [baseheight] [baseweight] [M/U]`.""", delete_after=5)
 
     @commands.command()
-    async def unregister(ctx, code = None):
+    async def unregister(self, ctx, code = None):
         if not os.path.exists(folder + '/users/' + str(ctx.message.author.id) + '.txt'):
         #User file missing.
             await ctx.send("""Sorry! You aren't registered with SizeBot.
@@ -86,7 +98,7 @@ class RegisterCog:
             await ctx.send("Incorrect code. You said: `{0}`. The correct code was: `{1}`. Try again.".format(
                 code, readhexcode()), delete_after=5)
         else:
-            await ctx.send("Correct code! Unregisted {0}".format(ctx.message.author.name), delete_after=3)
+            await ctx.send("Correct code! Unregistered {0}".format(ctx.message.author.name), delete_after=3)
             os.remove(folder + "/users/" + str(ctx.message.author.id) + ".txt")
 
 #Necessary.

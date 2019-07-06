@@ -1,6 +1,9 @@
-from globalsb4 import *
+from discord.ext import commands
 
-class ModCog:
+from globalsb4 import version, digiid
+from DPNGourmet import ascii
+
+class ModCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -24,6 +27,7 @@ class ModCog:
 
     @commands.command()
     async def about(self, ctx):
+        member_count = "many" # TODO: Change this to get the number of users in the sizebot database
         await ctx.message.delete()
         await ctx.send("```" + ascii + "```")
         await ctx.send("""<@{0}>
@@ -41,11 +45,11 @@ class ModCog:
     ":100::thumbsup:" -- *Anonymous*
     "I am the only person who has accidentally turned my fetish into a tech support job." -- *DigiDuncan*
 
-    Version {2} | 04 Apr 2018""".format(ctx.message.author.id, members, version))
+    Version {2} | 04 Apr 2018""".format(ctx.message.author.id, member_count, version))
 
     @commands.command()
     async def bug(self, ctx, *, message : str):
-        await bot.get_user(digiid).send("<@{0}>: {1}".format(ctx.message.author.id, message))
+        await self.bot.get_user(digiid).send("<@{0}>: {1}".format(ctx.message.author.id, message))
 
 #Necessary.
 def setup(bot):

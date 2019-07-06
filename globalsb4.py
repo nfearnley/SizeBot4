@@ -1,28 +1,8 @@
-import discord
-from discord.ext import commands
 import re
-import datetime
-import sys
-import os
-import time
-from datetime import date
-from datetime import *
-import math
 import random
-from decimal import *
-from colored import fore, back, style, fg, bg, attr
-from pathlib import Path
-import string
-import traceback
-from discord.ext import commands
-from math import *
-import asyncio
-import codecs
-from time import strftime, localtime
+from decimal import Decimal, Context, getcontext, setcontext, ROUND_HALF_EVEN, Overflow, DivisionByZero, InvalidOperation
 
-from DPNVT import *
-from DPNGourmet import *
-from digiconvert import *
+import discord
 
 #TODO: Make this do something useful.
 class DigiException(Exception):
@@ -54,13 +34,13 @@ def regenhexcode():
     hexdigits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f"]
     lst = [random.choice(hexdigits) for n in range(16)]
     hexstring = "".join(lst)
-    hexfile = open("hexstring.txt", "r+")
+    hexfile = open("hexstring.txt", "w")
     hexfile.write(hexstring)
     hexfile.close()
 
 def readhexcode():
     #Read the hexcode from the file.
-    hexfile = open("hexstring.txt", "r+")
+    hexfile = open("hexstring.txt", "r")
     hexcode = hexfile.readlines()
     hexfile.close()
     return str(hexcode[0])

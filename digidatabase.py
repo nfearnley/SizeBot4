@@ -1,5 +1,3 @@
-from globalsb4 import *
-
 def getUserArray():
     pass
 

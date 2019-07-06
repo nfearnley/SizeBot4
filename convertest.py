@@ -1,4 +1,4 @@
-from globalsb4 import *
+from globalsb4 import getnum, getlet
 
 print()
 

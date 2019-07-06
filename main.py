@@ -1,4 +1,11 @@
-from globalsb4 import *
+import os
+
+import discord
+from discord.ext import commands
+from colored import bg, fg, fore, style
+
+from DPNGourmet import ascii, warn, crit, test
+from globalsb4 import check, sizebot_id
 
 #Required dor colored to work on Windows.
 os.system("")
@@ -62,6 +69,4 @@ if __name__ == '__main__':
     for extension in initial_extensions:
         #try:
         bot.load_extension(extension)
-
-
-bot.run(authtoken)
+    bot.run(authtoken)
