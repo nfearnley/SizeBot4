@@ -2,7 +2,7 @@ from discord.ext import commands
 
 from globalsb4 import digiid
 
-#Commands for non-size stuff.
+# Commands for non-size stuff.
 class FunCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -19,6 +19,6 @@ class FunCog(commands.Cog):
         newstring = ":musical_score: *" + inString + "* :musical_note:"
         await ctx.send(newstring)
 
-#Necessary.
+# Necessary.
 def setup(bot):
     bot.add_cog(FunCog(bot))

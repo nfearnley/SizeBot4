@@ -7,10 +7,10 @@ from colored import bg, fg, fore, style
 from DPNGourmet import ascii, warn, crit, test
 from globalsb4 import check
 
-#Required dor colored to work on Windows.
+# Required dor colored to work on Windows.
 os.system("")
 
-#Get authtoken from file.
+# Get authtoken from file.
 with open("../_authtoken.txt") as f:
     authtoken = f.readlines()
 authtoken = [x.strip() for x in authtoken]
@@ -35,19 +35,19 @@ bot.remove_command("help")
 bot.add_check(check)
 
 @bot.event
-#Output header.
+# Output header.
 async def on_ready():
-    print(fore.CYAN + 'Logged in as')
+    print(fore.CYAN + "Logged in as")
     print(bot.user.name)
     print(bot.user.id)
-    print('------' + style.RESET)
+    print("------" + style.RESET)
     await bot.change_presence(activity=discord.Game(name="Ratchet and Clank: Size Matters"))
     print(warn("Warn test."))
     print(crit("Crit test."))
     print(test("Test test."))
     
 # Here we load our extensions(cogs) listed above in [initial_extensions].
-if __name__ == '__main__':
+if __name__ == "__main__":
     for extension in initial_extensions:
         #try:
         bot.load_extension(extension)
