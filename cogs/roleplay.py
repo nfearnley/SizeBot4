@@ -1,5 +1,7 @@
 from discord.ext import commands
 
+import random
+
 #Commands for roleplaying.
 class RPCog(commands.Cog):
     def __init__(self, bot):
