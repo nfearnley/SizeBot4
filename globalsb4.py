@@ -73,13 +73,13 @@ context = Context(prec=100, rounding=ROUND_HALF_EVEN, Emin=-9999999, Emax=999999
 setcontext(context)
 
 #Get number from string.
-def getnum(string):
-    numberarray = [str(s) for s in re.findall(r'\d+\.?\d*', string)]
+def getnum(inString):
+    numberarray = [str(s) for s in re.findall(r'\d+\.?\d*', inString)]
     return Decimal(numberarray[0])
 
 #Get letters from string.
-def getlet(string):
-    letterarray = [str(s) for s in re.findall(r'[a-zA-Z]+', string)]
+def getlet(inString):
+    letterarray = [str(s) for s in re.findall(r'[a-zA-Z]+', inString)]
     return letterarray[0]
 
 #Remove trailing zeros.

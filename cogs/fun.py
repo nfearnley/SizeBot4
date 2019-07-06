@@ -12,9 +12,9 @@ class FunCog:
             await ctx.send(message)
 
     @commands.command()
-    async def sing(self, ctx, *, string : str):
+    async def sing(self, ctx, *, inString : str):
         await ctx.message.delete()
-        newstring = ":musical_score: *" + string + "* :musical_note:"
+        newstring = ":musical_score: *" + inString + "* :musical_note:"
         await ctx.send(newstring)
 
 #Necessary.
