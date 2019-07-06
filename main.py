@@ -27,7 +27,7 @@ initial_extensions = ['cogs.register',
                       'cogs.fun']
 
 #Obviously we need this printed in the terminal.
-print(bg(24) + fg(202) + style.BOLD +ascii + style.RESET)
+print(bg(24) + fg(202) + style.BOLD + ascii + style.RESET)
 
 bot = commands.Bot(command_prefix=prefix, description=description)
 bot.remove_command("help")

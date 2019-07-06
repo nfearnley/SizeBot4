@@ -3,17 +3,17 @@ from time import strftime, localtime
 from colored import fg, back, fore, style
 
 def load(message):
-	return (fg(238) + message + style.RESET)
+    return (fg(238) + message + style.RESET)
 def time():
-	return (fore.MAGENTA + strftime("%d %b %H:%M:%S | ", localtime()) + style.RESET)
+    return (fore.MAGENTA + strftime("%d %b %H:%M:%S | ", localtime()) + style.RESET)
 def warn(message):
-	return (time() + fore.YELLOW + message + style.RESET)
+    return (time() + fore.YELLOW + message + style.RESET)
 def crit(message):
-	return (time() + back.RED + style.BOLD + message + style.RESET)
+    return (time() + back.RED + style.BOLD + message + style.RESET)
 def test(message):
-	return (time() + fore.BLUE + message + style.RESET)
+    return (time() + fore.BLUE + message + style.RESET)
 def msg(message):
-	return (time() + fg(51) + message + style.RESET)
+    return (time() + fg(51) + message + style.RESET)
 
 ascii = r"""
  .d8888b.  d8b                   888888b.            888       d8888
