@@ -1,10 +1,10 @@
+import os
 import re
-import random
 from decimal import Decimal, Context, getcontext, setcontext, ROUND_HALF_EVEN, Overflow, DivisionByZero, InvalidOperation
 
 import discord
 
-# TODO: Make this do something useful.
+# TO DO: Make this do something useful.
 class DigiException(Exception):
     pass
 
@@ -12,33 +12,35 @@ class DigiException(Exception):
 version = "0.0.1"
 
 # Defaults
-defaultheight = None # TODO: Set to the new value/unit pairs.
-defaultweight = None # TODO: Set to the new value/unit pairs.
+defaultheight = None # TO DO: Set to the new value/unit pairs.
+defaultweight = None # TO DO: Set to the new value/unit pairs.
 defaultdensity = Decimal(1.0)
 
 # Constants.
-newline = "\n"
 folder = ".."
 reol = 106871675617820672
-sizebot_id = None # TODO: Get SB4's ID.
+sizebot_id = None # TO DO: Get SB4's ID.
 digiid = 271803699095928832
 
 # Hex code stuff.
-def regenhexcode():
-    # 16-char hex string gen for unregister.
-    hexdigits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f"]
-    lst = [random.choice(hexdigits) for n in range(16)]
-    hexstring = "".join(lst)
-    hexfile = open("hexstring.txt", "w")
-    hexfile.write(hexstring)
-    hexfile.close()
 
+# Generate a new 16-char hex string for unregister, and save it to a file.
+def regenhexcode():
+    hexcode = os.urandom(8).hex()
+    with open("hexstring.txt", "w") as hexfile:
+        hexfile.write(hexcode)
+    return hexcode
+    
+# Read the hexcode from the file. If file is not accessible or invalid, then return None.
 def readhexcode():
-    # Read the hexcode from the file.
-    hexfile = open("hexstring.txt", "r")
-    hexcode = hexfile.readlines()
-    hexfile.close()
-    return str(hexcode[0])
+    try:
+        with open("hexstring.txt", "r") as hexfile:
+            hexcode = hexfile.readline().strip()
+            if len(hexcode) != 16:
+                hexcode = None
+    except IOError:
+        hexcode = None
+    return hexcode
 
 # Configure decimal module.
 getcontext()
@@ -58,7 +60,7 @@ def getlet(inString):
     return letterarray[0]
 
 # Remove trailing zeros.
-# TODO
+# TO DO
 def removetrailing0s():
     # (\d*\.[123456789]*)0*
     pass
@@ -71,8 +73,8 @@ def round_nearest_half(number):
 def place_value(number):
     return ("{:,}".format(number))
 
-def check(ctx):
 # Disable commands for users with the SizeBot_Banned role.
+def check(ctx):
     if not isinstance(ctx.channel, discord.abc.GuildChannel):
         return False
 

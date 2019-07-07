@@ -27,7 +27,7 @@ class ModCog(commands.Cog):
 
     @commands.command()
     async def about(self, ctx):
-        member_count = "many" # TODO: Change this to get the number of users in the sizebot database
+        member_count = "many" # TO DO: Change this to get the number of users in the sizebot database
         await ctx.message.delete()
         await ctx.send("```" + ascii + "```")
         await ctx.send("""<@{0}>

@@ -12,9 +12,7 @@ os.system("")
 
 # Get authtoken from file.
 with open("../_authtoken.txt") as f:
-    authtoken = f.readlines()
-authtoken = [x.strip() for x in authtoken]
-authtoken = authtoken[0]
+    authtoken = f.readline().strip()
 
 # Predefined variables.
 prefix = "&"
