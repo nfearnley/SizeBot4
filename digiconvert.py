@@ -218,7 +218,7 @@ unitnames = {
 
 #Different scales and their cutoffs )for display only.)
 #If the size given is above the key, it will use the value of that pair as it's convert-to unit.
-#TODO: Not done.
+#TO DO: Not done.
 orders = {
     "metriclength": {
         0: "ℓₚ",

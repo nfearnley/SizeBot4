@@ -5,3 +5,4 @@
 *.sln
 /token.txt
 /hexstring.txt
+*.pyproj.user
