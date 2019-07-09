@@ -21,7 +21,7 @@
 * Customizable body part sizes per character. [foot size, boob size, penis size] (hand, butt, hair length?)
 
 
-stats:                      statsplus:
+STATS:                      STATSNSFW:
 height                      penis
 weight                      boobs
 foot                        butt (?)
@@ -33,3 +33,65 @@ fingerprint depth
 footprint depth (is there an equation for this?)
 hair diameter
 hair length (?)
+
+
+FULL COMMAND LIST:
+&register
+&unregister
+&help <subcommand>
+&about
+&bug
+&donate
+&units <subcategory>
+&createcharacter (figure out how this will work)
+&switchcharacter
+&deletecharacter
+&stats <user>
+&statsnsfw <user>
+&statsraw [size]
+&compare [user1] <user2>
+&compareraw [size1] <size2>
+&setheight [height]
+&setdensity [multiplier]
+&setfoot [foot length]
+&sethair [hair length]
+&setboob [boob size]
+&setpenis [penis size]
+&set0
+&setinf
+&setrandom [attribute] [minsize] [maxsize]
+&change [attribute] [style (x,+,-,/)] [amount]
+&setbaseheight [height]
+&setbaseweight [weight]
+&setbasefoot [foot length]
+&setbasehair [hair length]
+&setbaseboob [boob size]
+&setbasepenis [penis size]
+&toggle [attribute] (boobs, penis, etc.)
+&changenick [nick]
+&setspecies [species]
+&clearspecies
+&toggledisplay
+&slowchange [style] [rate] <stoptype> <stopcondition>
+&slowspurt [style] [rate] [delay] <stoptype> <stopcondition>
+&stopchange
+&setheightother [user] [height]
+&setdensityother [user] [multiplier]
+&setfootother [user] [foot length]
+&sethairother [user] [hair length]
+&setboobother [user] [boob size]
+&setpenisother [user] [penis size]
+&set0other [user]
+&setinfother [user]
+&setrandomother [user] [attribute] [minsize] [maxsize]
+&changeother [user] [attribute] [style (x,+,-,/)] [amount]
+&slowchangeother [user] [style] [rate] <stoptype> <stopcondition>
+&slowspurtother [user] [style] [rate] [delay] <stoptype> <stopcondition>
+&stopchangeother [user]
+&allowchangebyothers [on, whitelist, blacklist, off]
+&whitelist [add, remove] [user]
+&blacklist [add, remove] [user]
+&showcard <user>
+&autorole [on/off]
+&roll [XdY]<dZ,kZ,dhZ,klZ>
+&sing [string]
