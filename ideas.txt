@@ -1,32 +1,35 @@
 * Scientific notation.
 * Allow users to store character pictures.
 * Easier, step-by-step register process.
-* Oh God please fix the unit handling. [working on it]
+* Oh God please fix the unit handling. (working on it)
 * Store user database in a database and not a fuckton of txt files.
 * Autostop option for slowchange.
 * Stop using async tasks for slowchange. (Store in a database and read from periodically?)
+* Change the way &slowchange works. [&slowchange <rate>] (spilt constant/spurt into seperate commands?)
 * Auto-role for SizeBot Users.
-* Auto-role based on current size option.
-* Manual role change for now-auto-role users.
+* Auto-role based on current size option. [optional for user]
 * Custom emojis trigger events.
-* Option to allow others to change your size. (modes: disable, whitelist, all)
+* Option to allow others to change your size. [modes: disable, whitelist, blacklist, all]
 * Height gambling games (Poker? Uno? Deal or No Deal?)
 * Allow you to compare another user other than yourself with compareraw.
-* Allow expansions for various body parts (weight, foot, NSFW)
+* Allow expansions for various body parts [weight, foot, NSFW]
 * Fix Unicode handling for nicknames.
 * Generate user "cards".
-* Switchable user profiles.
+* Switchable user profiles. [create characters, switch between them]
 * Visual height comparisons.
+* Compare yourself to objects of similar size.
+* Customizable body part sizes per character. [foot size, boob size, penis size] (hand, butt, hair length?)
 
 
 stats:                      statsplus:
-height                      ding dong
-weight                      boobles
-foot                        rear end
+height                      penis
+weight                      boobs
+foot                        butt (?)
 thumb
-
 hand
 foot area
 hand area
-fingerprint depth?
+fingerprint depth
+footprint depth (is there an equation for this?)
 hair diameter
+hair length (?)
