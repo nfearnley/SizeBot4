@@ -19,6 +19,7 @@
 * Visual height comparisons.
 * Compare yourself to objects of similar size.
 * Customizable body part sizes per character. [foot size, boob size, penis size] (hand, butt, hair length?)
+*RP mode: user flag that deletes setheight, change, and slowchange commands but keeps the output in chat, so it can be used in RP rooms and preserve what size the user was later.
 
 
 STATS:                      STATSNSFW:
