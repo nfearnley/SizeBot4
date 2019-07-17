@@ -4,6 +4,22 @@ from sizebot4 import conf
 from sizebot4 import logging
 
 
+class User:
+    __slots__ = ("userid", "nick", "display", "currentheight", "chu", "baseheight", "bhu", "baseweight", "bwu", "species")
+
+    def __init__(self):
+        pass
+
+    # user.save() to save a user to the database
+    def save(self):
+        pass
+
+    # User.load(userid) to load a user from the database
+    @staticmethod
+    def load(userid):
+        pass
+
+
 def getUserArray():
     pass
 
