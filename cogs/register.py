@@ -58,7 +58,7 @@ class RegisterCog(commands.Cog):
 
         # Invalid units value
         if units.lower() not in ["m", "u"]:
-            print(warn("units was {units}, must be M or U."))
+            print(warn(f"units was {units}, must be M or U."))
             await ctx.send("Units must be `M` or `U`.", delete_after=3)
             return
 
