@@ -1,8 +1,15 @@
-
+# Compiled python
 *.pyc
+
+# Visual Studio
 .vs
 *.pyproj
-*.sln
-/token.txt
-/hexstring.txt
 *.pyproj.user
+*.sln
+
+# Visual Studio Code
+.vscode
+*.code-workspace
+
+# Data files
+hexstring.txt
