@@ -5,7 +5,7 @@ import traceback
 
 from discord.ext import commands
 
-from sizebot4.DPNGourmet import warn
+from sizebot4 import logging
 from sizebot4.globalsb4 import regenhexcode, readhexcode, getnum, getlet
 import sizebot4.digidatabase as db
 
@@ -33,8 +33,8 @@ class RegisterCog(commands.Cog):
         baseweight = Decimal(baseweight)
 
         readable = f"CH {currentheight}, CHU {chu}, BH {baseheight}, BHU {bhu}, BW {baseweight}, BWU {bwu}"
-        print(f"Nickname: {nick}, Display: {display}")
-        print(readable)
+        logging.log(f"Nickname: {nick}, Display: {display}", timestamp=False)
+        logging.log(readable, timestamp=False)
 
         # Already registered
         if db.userFileExists(ctx.message.author.id):
@@ -42,23 +42,23 @@ class RegisterCog(commands.Cog):
                 "Sorry! You already registered with SizeBot.\n"
                 "To unregister, use the `&unregister` command.",
                 delete_after=5)
-            print(warn(f"Error UAE1 on user registration: {ctx.message.author}."))
+            logging.warn(f"Error UAE1 on user registration: {ctx.message.author}.")
             return
 
         # Invalid size value
         if currentheight <= 0 or baseheight <= 0 or baseweight <= 0:
-            print(warn("Invalid size value."))
+            logging.warn("Invalid size value.")
             await ctx.send("All values must be an integer greater than zero.", delete_after=3)
             return
 
         # Invalid display value
         if display.lower() not in ["y", "n"]:
-            print(warn(f"display was {display}, must be Y or N."))
+            logging.warn(f"display was {display}, must be Y or N.")
             return
 
         # Invalid units value
         if units.lower() not in ["m", "u"]:
-            print(warn(f"units was {units}, must be M or U."))
+            logging.warn(f"units was {units}, must be M or U.")
             await ctx.send("Units must be `M` or `U`.", delete_after=3)
             return
 

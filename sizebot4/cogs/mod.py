@@ -2,7 +2,6 @@ from discord.ext import commands
 
 from sizebot4 import conf
 from sizebot4.globalsb4 import version
-from sizebot4.DPNGourmet import banner
 
 
 class ModCog(commands.Cog):
@@ -33,7 +32,7 @@ class ModCog(commands.Cog):
     async def about(self, ctx):
         member_count = "many"  # TODO: Change this to get the number of users in the sizebot database
         await ctx.message.delete()
-        await ctx.send(f"```{banner}```")
+        await ctx.send(f"```{conf.banner}```")
         await ctx.send(
             f"<@{ctx.message.author.id}>\n"
             "***SizeBot4 by DigiDuncan***\n"

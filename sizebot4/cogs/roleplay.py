@@ -2,7 +2,7 @@ import random
 
 from discord.ext import commands
 
-from sizebot4.DPNGourmet import warn
+from sizebot4 import logging
 
 
 # Commands for roleplaying
@@ -23,12 +23,12 @@ class RPCog(commands.Cog):
         if rolls > 100:
             # Don't let them roll a ton of dice
             await ctx.send("Too many dice! Try again.")
-            print(warn(f"User {ctx.message.author.name} tried to roll {rolls} dice."))
+            logging.warn(f"User {ctx.message.author.name} tried to roll {rolls} dice.")
             return
         if limit > 1000:
             # Keep number of sides rational
             await ctx.send("Dice too big! Try again.")
-            print(warn(f"User {ctx.message.author.name} tried to roll a {limit}-sided dice."))
+            logging.warn(f"User {ctx.message.author.name} tried to roll a {limit}-sided dice.")
             return
 
         # Prettify the individual roll list

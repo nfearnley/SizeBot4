@@ -1,3 +1,5 @@
+from sizebot4 import logging
+
 ESC = "\033"
 BLANK = " "
 TWENTYFIVE = "\u2591"
@@ -24,4 +26,4 @@ BeginOfLine = CursorLeft * 100
 
 
 def SetWindowTitle(title):
-    print(ESC + "]2;" + title + BEL)
+    logging.log(ESC + "]2;" + title + BEL, timestamp=False)

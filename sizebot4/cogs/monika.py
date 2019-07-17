@@ -2,7 +2,7 @@ import random
 
 from discord.ext import commands
 
-from sizebot4.DPNGourmet import warn
+from sizebot4 import logging
 
 monika_lines = [
     "What? I don't know anyone named Monika.",
@@ -28,13 +28,13 @@ class MonikaCog(commands.Cog):
         if not detected:
             return
 
-        print(warn("Monika detected."))
+        logging.warn("Monika detected.")
         triggered = random.randrange(10) == 0  # 1 in 10 chance of triggering
 
         if not triggered:
             return
 
-        print(warn("Monika triggered."))
+        logging.warn("Monika triggered.")
         line = random.choice(monika_lines)
         await message.channel.send(line, delete_after=5)
 

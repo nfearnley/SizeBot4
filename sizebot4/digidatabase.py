@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from sizebot4 import conf
-from sizebot4.DPNGourmet import warn
+from sizebot4 import logging
 
 
 def getUserArray():
@@ -34,8 +34,8 @@ def saveUserFile(user, data):
     path = getUserFilePath(user.id)
     with open(path, "w") as f:
         f.write(userFileString)
-    print(warn(f"Made a new user: {user}!"))
-    print(data)
+    logging.warn(f"Made a new user: {user}!")
+    logging.log(data, timestamp=False)
 
 
 def loadUserFile():
