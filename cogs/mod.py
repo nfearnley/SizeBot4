@@ -3,54 +3,58 @@ from discord.ext import commands
 from globalsb4 import version, digiid
 from DPNGourmet import ascii
 
+
 class ModCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
-    async def help(self, ctx, what:str = None):
+    async def help(self, ctx, what: str = None):
         await ctx.message.delete()
         if what is None:
-            await ctx.send("""<@{0}>, **Help Topics**
-    note: [] indicates a required parameter, <> indicates an optional parameter.
-    __*Commands*__
-    ```
-    register [nickname] [Y/N] [current height] [base height] [base weight] [U/M] <species>
-    unregister
-    roll XdY
-    sing [string]```
-
-    *Other Topics*
-    ```
-    about
-    bug```""".format(ctx.message.author.id))
+            await ctx.send(
+                f"<@{ctx.message.author.id}>, **Help Topics**\n"
+                "note: [] indicates a required parameter, <> indicates an optional parameter.\n"
+                "__*Commands*__\n"
+                "```\n"
+                "register [nickname] [Y/N] [current height] [base height] [base weight] [U/M] <species>\n"
+                "unregister\n"
+                "roll XdY\n"
+                "sing [string]```\n"
+                "\n"
+                "*Other Topics*\n"
+                "```\n"
+                "about\n"
+                "bug```")
 
     @commands.command()
     async def about(self, ctx):
-        member_count = "many" # TO DO: Change this to get the number of users in the sizebot database
+        member_count = "many"  # TODO: Change this to get the number of users in the sizebot database
         await ctx.message.delete()
-        await ctx.send("```" + ascii + "```")
-        await ctx.send("""<@{0}>
-    ***SizeBot4 by DigiDuncan***
-    *A big program for big people.*
-    **Written for the Size Matters server**
-    **Additional equations** *by Benyovski and Arceus3251*
-    **Alpha Tested** *by AWK_*
-    **written in** *Python 3.7 with discord.py*
-    **written with** Atom
-    **Special thanks** *to the discord.py Community Discord for helping with code*
-    **Special thanks** to the {1} users of SizeBot4.
-
-    "She (*SizeBot*) is beautiful." -- *GoddessArete*
-    ":100::thumbsup:" -- *Anonymous*
-    "I am the only person who has accidentally turned my fetish into a tech support job." -- *DigiDuncan*
-
-    Version {2} | 04 Apr 2018""".format(ctx.message.author.id, member_count, version))
+        await ctx.send(f"```{ascii}```")
+        await ctx.send(
+            f"<@{ctx.message.author.id}>\n"
+            "***SizeBot4 by DigiDuncan***\n"
+            "*A big program for big people.*\n"
+            "**Written for the Size Matters server**\n"
+            "**Additional equations** *by Benyovski and Arceus3251*\n"
+            "**Alpha Tested** *by AWK_*\n"
+            "**written in** *Python 3.7 with discord.py*\n"
+            "**written with** Atom\n"
+            "**Special thanks** *to the discord.py Community Discord for helping with code*\n"
+            f"**Special thanks** to the {member_count} users of SizeBot4.\n"
+            "\n"
+            '"She (*SizeBot*) is beautiful." -- *GoddessArete*\n'
+            '":100::thumbsup:" -- *Anonymous*\n'
+            '"I am the only person who has accidentally turned my fetish into a tech support job." -- *DigiDuncan*\n'
+            "\n"
+            f"Version {version} | 04 Apr 2018")
 
     @commands.command()
-    async def bug(self, ctx, *, message : str):
-        await self.bot.get_user(digiid).send("<@{0}>: {1}".format(ctx.message.author.id, message))
+    async def bug(self, ctx, *, message: str):
+        await self.bot.get_user(digiid).send(f"<@{ctx.message.author.id}>: {message}")
 
-#Necessary.
+
+# Necessary
 def setup(bot):
     bot.add_cog(ModCog(bot))

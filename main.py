@@ -7,33 +7,37 @@ from colored import bg, fg, fore, style
 from DPNGourmet import ascii, warn, crit, test
 from globalsb4 import check
 
-# Required dor colored to work on Windows.
+# Required for colored to work on Windows
 os.system("")
 
-# Get authtoken from file.
+# Get authtoken from file
 with open("../_authtoken.txt") as f:
     authtoken = f.readline().strip()
 
-# Predefined variables.
+# Predefined variables
 prefix = "&"
-description = """SizeBot4 is a complete rewrite of SizeBot for the Size Matters server.
-Written by DigiDuncan.
-The SizeBot Team: DigiDuncan, AWK_, Arceus3521, SurgeTheRaichu."""
-initial_extensions = ["cogs.register",
+description = (
+    "SizeBot4 is a complete rewrite of SizeBot for the Size Matters server.\n"
+    "Written by DigiDuncan.\n"
+    "The SizeBot Team: DigiDuncan, AWK_, Arceus3521, SurgeTheRaichu.")
+initial_extensions = [
+    "cogs.register",
     "cogs.mod",
     "cogs.roleplay",
     "cogs.fun",
-    "cogs.monika"]
+    "cogs.monika"
+]
 
-# Obviously we need this printed in the terminal.
-print(bg(24) + fg(202) + style.BOLD + ascii + style.RESET)
+# Obviously we need this printed in the terminal
+print(f"{bg(24)}{fg(202)}{style.BOLD}\n{ascii}{style.RESET}")
 
 bot = commands.Bot(command_prefix=prefix, description=description)
 bot.remove_command("help")
 bot.add_check(check)
 
+
 @bot.event
-# Output header.
+# Output header
 async def on_ready():
     print(fore.CYAN + "Logged in as")
     print(bot.user.name)
@@ -43,10 +47,9 @@ async def on_ready():
     print(warn("Warn test."))
     print(crit("Crit test."))
     print(test("Test test."))
-    
-# Here we load our extensions(cogs) listed above in [initial_extensions].
+
+# Here we load our extensions(cogs) listed above in [initial_extensions]
 if __name__ == "__main__":
     for extension in initial_extensions:
-        #try:
         bot.load_extension(extension)
     bot.run(authtoken)

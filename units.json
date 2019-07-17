@@ -1,39 +1,39 @@
 [
-	{
-		abbr: "ℓₚ",
-		alts: [
-			"plancklength",
+    {
+        abbr: "ℓₚ",
+        alts: [
+            "plancklength",
             "planck",
             "pl",
             "lp"
-		],
-		value: 0.00000000000000000000000000000000001616229,
-		type: "length",
-		system: "natural",
-		output: true
-	},
+        ],
+        value: 0.00000000000000000000000000000000001616229,
+        type: "length",
+        system: "natural",
+        output: true
+    },
     {
-		abbr: "ym",
-		alts: [
+        abbr: "ym",
+        alts: [
             "yoctometer",
             "yoctometre"
-		],
-		value: 0.000000000000000000000001,
-		type: "length",
-		system: "metric",
-		output: true
-	},
+        ],
+        value: 0.000000000000000000000001,
+        type: "length",
+        system: "metric",
+        output: true
+    },
     {
-		abbr: "zm",
-		alts: [
+        abbr: "zm",
+        alts: [
             "zeptometer",
             "zeptometre"
-		],
-		value: 0.000000000000000000001,
-		type: "length",
-		system: "metric",
-		output: true
-	},
+        ],
+        value: 0.000000000000000000001,
+        type: "length",
+        system: "metric",
+        output: true
+    },
     {
         abbr: "am",
         alts: [

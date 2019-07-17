@@ -4,11 +4,14 @@ from discord.ext import commands
 
 from DPNGourmet import warn
 
-monika_lines = ["What? I don't know anyone named Monika.",
-"I don't know anyone named Monika! hehheh...",
-"Hey wha-- er...", "Did someone say my n- um... Monika? Weird.",
-"I hear Monika was the best character in Doki Doki. I may be a bit biased though 'cause... never mind.",
-"Monika? :sweat_smile: Never heard of her."]
+monika_lines = [
+    "What? I don't know anyone named Monika.",
+    "I don't know anyone named Monika! hehheh...",
+    "Hey wha-- er...",
+    "Did someone say my n- um... Monika? Weird.",
+    "I hear Monika was the best character in Doki Doki. I may be a bit biased though 'cause... never mind.",
+    "Monika? :sweat_smile: Never heard of her."
+]
 
 
 # Easter egg
@@ -18,15 +21,15 @@ class MonikaCog(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if message.author.bot: # ignore messages from bots
+        if message.author.bot:  # ignore messages from bots
             return
 
-        detected = "monika" in message.content.lower() # triggers when a message contains "monika", case-insensitive
+        detected = "monika" in message.content.lower()  # triggers when a message contains "monika", case-insensitive
         if not detected:
             return
 
         print(warn("Monika detected."))
-        triggered = random.randrange(10) == 0 # 1 in 10 chance of triggering
+        triggered = random.randrange(10) == 0  # 1 in 10 chance of triggering
 
         if not triggered:
             return
