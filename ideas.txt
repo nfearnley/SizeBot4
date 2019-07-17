@@ -10,6 +10,7 @@
 * Auto-role based on current size option. [optional for user]
 * Custom emojis trigger events.
 * Option to allow others to change your size. [modes: disable, whitelist, blacklist, all]
+    - Allow users to set minimum and maximum sizes of attributes for themselves.
 * Height gambling games (Poker? Uno? Deal or No Deal?)
 * Allow you to compare another user other than yourself with compareraw.
 * Allow expansions for various body parts [weight, foot, NSFW]
@@ -19,23 +20,28 @@
 * Visual height comparisons.
 * Compare yourself to objects of similar size.
 * Customizable body part sizes per character. [foot size, boob size, penis size] (hand, butt, hair length?)
+* RP mode: user flag that deletes setheight, change, and slowchange commands but keeps the output in chat, so it can be used in RP rooms and preserve what size the user was later.
+* Convert command. [&convert <size> <new unit>]
+* Calculate command. [&calc <equation>] (use an API for this?)
+* "Set height such that" command. e.g.: "set height such that foot length = 1mi", or "set height such that my height = fingerprint depth of someone 500km tall" or "set height such that the hair of someone 6ft looks 50ft thick"
 
-
-STATS:                      STATSNSFW:
-height                      penis
-weight                      boobs
-foot                        butt (?)
+(† indicate user-customizable)
+STATS:                       STATSNSFW:
+height†                      penis†
+weight†                      boobs†
+foot†                        butt† (?)
 thumb
 hand
 foot area
 hand area
 fingerprint depth
 footprint depth (is there an equation for this?)
-hair diameter
-hair length (?)
+hair width
+hair length† (?)
 
 
 FULL COMMAND LIST:
+#Setup/Help Commands
 &register
 &unregister
 &help <subcommand>
@@ -43,14 +49,20 @@ FULL COMMAND LIST:
 &bug
 &donate
 &units <subcategory>
+
+#Character creation commands
 &createcharacter (figure out how this will work)
 &switchcharacter
 &deletecharacter
+
+#Stats commands
 &stats <user>
 &statsnsfw <user>
 &statsraw [size]
 &compare [user1] <user2>
 &compareraw [size1] <size2>
+
+#Set commands
 &setheight [height]
 &setdensity [multiplier]
 &setfoot [foot length]
@@ -61,6 +73,7 @@ FULL COMMAND LIST:
 &setinf
 &setrandom [attribute] [minsize] [maxsize]
 &change [attribute] [style (x,+,-,/)] [amount]
+&setheightsuchthat [attribute] [size] OR [attribute] [othersize] [otherattribute] OR [attribute] [othersize] [otherattribute] [size]
 &setbaseheight [height]
 &setbaseweight [weight]
 &setbasefoot [foot length]
@@ -72,9 +85,15 @@ FULL COMMAND LIST:
 &setspecies [species]
 &clearspecies
 &toggledisplay
+&toggleautorole
+&toggleRPmode
+
+#Slow-change commands
 &slowchange [style] [rate] <stoptype> <stopcondition>
 &slowspurt [style] [rate] [delay] <stoptype> <stopcondition>
 &stopchange
+
+#Set other commands
 &setheightother [user] [height]
 &setdensityother [user] [multiplier]
 &setfootother [user] [foot length]
@@ -91,7 +110,12 @@ FULL COMMAND LIST:
 &allowchangebyothers [on, whitelist, blacklist, off]
 &whitelist [add, remove] [user]
 &blacklist [add, remove] [user]
+&setminsize [attribute] [size]
+&setmaxsize [attribute] [size]
+
+#Misc. commands
+&calc [equation]
+&convert [size] [new unit]
 &showcard <user>
-&autorole [on/off]
 &roll [XdY]<dZ,kZ,dhZ,klZ>
 &sing [string]
