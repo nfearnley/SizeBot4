@@ -1,127 +1,127 @@
 [
     {
-        abbr: "ℓₚ",
-        alts: [
+        "abbr": "ℓₚ",
+        "alts": [
             "plancklength",
             "planck",
             "pl",
             "lp"
         ],
-        value: 0.00000000000000000000000000000000001616229,
-        type: "length",
-        system: "natural",
-        output: true
+        "value": 0.00000000000000000000000000000000001616229,
+        "type": "length",
+        "system": "natural",
+        "output": true
     },
     {
-        abbr: "ym",
-        alts: [
+        "abbr": "ym",
+        "alts": [
             "yoctometer",
             "yoctometre"
         ],
-        value: 0.000000000000000000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000000000000000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "zm",
-        alts: [
+        "abbr": "zm",
+        "alts": [
             "zeptometer",
             "zeptometre"
         ],
-        value: 0.000000000000000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000000000000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "am",
-        alts: [
+        "abbr": "am",
+        "alts": [
             "attometer",
             "attometre"
         ],
-        value: 0.000000000000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000000000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "fm",
-        alts: [
+        "abbr": "fm",
+        "alts": [
             "femtometer",
             "femtometre"
         ],
-        value: 0.000000000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "pm",
-        alts: [
+        "abbr": "pm",
+        "alts": [
             "picometer",
             "picometre"
         ],
-        value: 0.000000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "nm",
-        alts: [
+        "abbr": "nm",
+        "alts": [
             "nanometer",
             "nanometre"
         ],
-        value: 0.000000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "μm",
-        alts: [
+        "abbr": "μm",
+        "alts": [
             "micrometer",
             "micrometre",
             "micron",
             "um"
         ],
-        value: 0.000001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.000001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "mm",
-        alts: [
+        "abbr": "mm",
+        "alts": [
             "millimeter",
             "millimetre"
         ],
-        value: 0.001,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.001,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "cm",
-        alts: [
+        "abbr": "cm",
+        "alts": [
             "centimeter",
             "centimetre"
         ],
-        value: 0.01,
-        type: "length",
-        system: "metric",
-        output: true
+        "value": 0.01,
+        "type": "length",
+        "system": "metric",
+        "output": true
     },
     {
-        abbr: "m",
-        alts: [
+        "abbr": "m",
+        "alts": [
             "meter",
             "metre"
         ],
-        value: 1,
-        type: "length",
-        system: "metric",
-        output: true
-    },
+        "value": 1,
+        "type": "length",
+        "system": "metric",
+        "output": true
+    }
 ]
