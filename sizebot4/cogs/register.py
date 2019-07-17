@@ -5,9 +5,9 @@ import traceback
 
 from discord.ext import commands
 
-from DPNGourmet import warn
-from globalsb4 import regenhexcode, readhexcode, getnum, getlet, folder
-import digidatabase as db
+from sizebot4.DPNGourmet import warn
+from sizebot4.globalsb4 import regenhexcode, readhexcode, getnum, getlet
+import sizebot4.digidatabase as db
 
 
 class RegisterCog(commands.Cog):

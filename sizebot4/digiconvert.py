@@ -6,7 +6,7 @@
 import re
 from decimal import Decimal
 
-from globalsb4 import getnum, round_nearest_half, place_value
+from sizebot4.globalsb4 import getnum, round_nearest_half, place_value
 
 
 # NOTE: A VUpair is a [Decimal/float, string] pair, where the first variable is the

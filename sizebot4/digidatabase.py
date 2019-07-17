@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from globalsb4 import folder
-
-from DPNGourmet import warn
+from sizebot4 import conf
+from sizebot4.DPNGourmet import warn
 
 
 def getUserArray():
@@ -15,7 +14,7 @@ def setUserProperty():
 
 def getUserFilePath(userId):
     filename = f"{userId}.txt"
-    return Path(folder) / "users" / filename
+    return Path(conf.user_path) / filename
 
 
 def userFileExists(userId):

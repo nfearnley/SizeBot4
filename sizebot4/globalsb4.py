@@ -4,6 +4,8 @@ from decimal import Decimal, Context, getcontext, setcontext, ROUND_HALF_EVEN, O
 
 import discord
 
+from sizebot4 import conf
+
 
 # TODO: Make this do something useful
 class DigiException(Exception):
@@ -18,19 +20,12 @@ defaultheight = None  # TODO: Set to the new value/unit pairs
 defaultweight = None  # TODO: Set to the new value/unit pairs
 defaultdensity = Decimal(1.0)
 
-# Constants
-folder = ".."
-reol = 106871675617820672
-sizebot_id = None  # TODO: Get SB4's ID
-digiid = 271803699095928832
-
 
 # Hex code stuff
-
 # Generate a new 16-char hex string for unregister, and save it to a file
 def regenhexcode():
     hexcode = os.urandom(8).hex()
-    with open("hexstring.txt", "w") as hexfile:
+    with open(conf.hexstring_path, "w") as hexfile:
         hexfile.write(hexcode)
     return hexcode
 
@@ -39,7 +34,7 @@ def regenhexcode():
 # If file is not accessible or invalid, then return None
 def readhexcode():
     try:
-        with open("hexstring.txt", "r") as hexfile:
+        with open(conf.hexstring_path, "r") as hexfile:
             hexcode = hexfile.readline().strip()
             if len(hexcode) != 16:
                 hexcode = None
@@ -50,9 +45,7 @@ def readhexcode():
 
 # Configure decimal module
 getcontext()
-context = Context(prec=100, rounding=ROUND_HALF_EVEN, Emin=-9999999, Emax=999999,
-                  capitals=1, clamp=0, flags=[], traps=[Overflow, DivisionByZero,
-                                                        InvalidOperation])
+context = Context(prec=100, rounding=ROUND_HALF_EVEN, Emin=-9999999, Emax=999999, capitals=1, clamp=0, flags=[], traps=[Overflow, DivisionByZero, InvalidOperation])
 setcontext(context)
 
 
@@ -86,7 +79,7 @@ def place_value(number):
 
 
 # Disable commands for users with the SizeBot_Banned role
-def check(ctx):
+def bancheck(ctx):
     if not isinstance(ctx.channel, discord.abc.GuildChannel):
         return False
 

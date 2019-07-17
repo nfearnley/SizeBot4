@@ -1,9 +1,10 @@
 from discord.ext import commands
 
-from globalsb4 import digiid
-
+from sizebot4 import conf
 
 # Commands for non-size stuff
+
+
 class FunCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -11,8 +12,9 @@ class FunCog(commands.Cog):
     @commands.command()
     async def say(self, ctx, *, message: str):
         await ctx.message.delete()
-        if ctx.message.author.id == digiid:
-            await ctx.send(message)
+        if ctx.message.author.id != conf.owner_id:
+            return
+        await ctx.send(message)
 
     @commands.command()
     async def sing(self, ctx, *, inString: str):

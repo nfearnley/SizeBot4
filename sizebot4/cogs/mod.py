@@ -1,7 +1,8 @@
 from discord.ext import commands
 
-from globalsb4 import version, digiid
-from DPNGourmet import ascii
+from sizebot4 import conf
+from sizebot4.globalsb4 import version
+from sizebot4.DPNGourmet import banner
 
 
 class ModCog(commands.Cog):
@@ -11,6 +12,7 @@ class ModCog(commands.Cog):
     @commands.command()
     async def help(self, ctx, what: str = None):
         await ctx.message.delete()
+        # TODO: Add support for multiple commands
         if what is None:
             await ctx.send(
                 f"<@{ctx.message.author.id}>, **Help Topics**\n"
@@ -31,7 +33,7 @@ class ModCog(commands.Cog):
     async def about(self, ctx):
         member_count = "many"  # TODO: Change this to get the number of users in the sizebot database
         await ctx.message.delete()
-        await ctx.send(f"```{ascii}```")
+        await ctx.send(f"```{banner}```")
         await ctx.send(
             f"<@{ctx.message.author.id}>\n"
             "***SizeBot4 by DigiDuncan***\n"
@@ -52,7 +54,7 @@ class ModCog(commands.Cog):
 
     @commands.command()
     async def bug(self, ctx, *, message: str):
-        await self.bot.get_user(digiid).send(f"<@{ctx.message.author.id}>: {message}")
+        await self.bot.get_user(conf.owner_id).send(f"<@{ctx.message.author.id}>: {message}")
 
 
 # Necessary

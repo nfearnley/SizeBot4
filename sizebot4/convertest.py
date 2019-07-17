@@ -1,6 +1,5 @@
-from globalsb4 import getnum, getlet
-
-from digiconvert import isFeetAndInchesAndIfSoFixIt, convert
+from sizebot4.globalsb4 import getnum, getlet
+from sizebot4.digiconvert import isFeetAndInchesAndIfSoFixIt, convert
 
 print()
 

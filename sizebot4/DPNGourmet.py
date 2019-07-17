@@ -27,7 +27,7 @@ def msg(message):
     return (time() + fg(51) + message + style.RESET)
 
 
-ascii = (
+banner = (
     ' .d8888b.  d8b                   888888b.            888       d8888\n'
     'd88P  Y88b Y8P                   888  "88b           888      d8P888\n'
     'Y88b.                            888  .88P           888     d8P 888\n'

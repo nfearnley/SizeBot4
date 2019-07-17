@@ -2,7 +2,7 @@ import random
 
 from discord.ext import commands
 
-from DPNGourmet import warn
+from sizebot4.DPNGourmet import warn
 
 
 # Commands for roleplaying
