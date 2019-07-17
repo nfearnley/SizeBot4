@@ -10,7 +10,7 @@
 * Auto-role based on current size option. [optional for user]
 * Custom emojis trigger events.
 * Option to allow others to change your size. [modes: disable, whitelist, blacklist, all]
-    - Allow users to set minimum and maximum heights for themselves.
+    - Allow users to set minimum and maximum sizes of attributes for themselves.
 * Height gambling games (Poker? Uno? Deal or No Deal?)
 * Allow you to compare another user other than yourself with compareraw.
 * Allow expansions for various body parts [weight, foot, NSFW]
@@ -23,6 +23,7 @@
 * RP mode: user flag that deletes setheight, change, and slowchange commands but keeps the output in chat, so it can be used in RP rooms and preserve what size the user was later.
 * Convert command. [&convert <size> <new unit>]
 * Calculate command. [&calc <equation>] (use an API for this?)
+* "Set height such that" command. e.g.: "set height such that foot length = 1mi", or "set height such that my height = fingerprint depth of someone 500km tall" or "set height such that the hair of someone 6ft looks 50ft thick"
 
 († indicate user-customizable)
 STATS:                       STATSNSFW:
@@ -72,6 +73,7 @@ FULL COMMAND LIST:
 &setinf
 &setrandom [attribute] [minsize] [maxsize]
 &change [attribute] [style (x,+,-,/)] [amount]
+&setheightsuchthat [attribute] [size] OR [attribute] [othersize] [otherattribute] OR [attribute] [othersize] [otherattribute] [size]
 &setbaseheight [height]
 &setbaseweight [weight]
 &setbasefoot [foot length]
