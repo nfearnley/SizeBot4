@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pymysql
+
 from sizebot4 import conf
 from sizebot4 import logging
 
@@ -18,6 +20,15 @@ class User:
     @staticmethod
     def load(userid):
         pass
+
+
+def getDBVersion():
+    con = pymysql.connect("localhost", "sizebot", "password", "sizebot")
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT VERSION()")
+        version = cur.fetchone()
+    print("Database version: {}".format(version[0]))
 
 
 def getUserArray():
